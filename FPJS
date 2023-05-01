@@ -1,0 +1,31 @@
+let form = document.querySelector('#login');
+
+function submitForm(event) {
+  event.preventDefault();
+  
+  let emailUserInput = document.querySelector('#user');
+  let errorContainer = document.querySelector('#user-error');
+
+  let wordPassInput = document.querySelector('#password');
+  let errorBox = document.querySelector('#password-error');
+  
+  if (emailUserInput.value.length < 1) {
+    errorContainer.textContent = 'First name must not be empty.';
+  } else {
+    errorContainer.textContent = '';}
+
+    if (wordPassInput.value.length < 3) {
+        errorBox.textContent = 'Password must be at least 3 characters.';
+      } else {
+        errorBox.textContent = '';}
+}
+
+form.addEventListener('submit', submitForm);
+
+
+const hamburger = document.querySelector('.hamburger');
+const navLink = document.querySelector('.nav__link');
+
+hamburger.addEventListener('click', () => {
+  navLink.classList.toggle('hide');
+});
